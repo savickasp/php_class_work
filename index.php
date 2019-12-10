@@ -1,23 +1,38 @@
 <?php
 
-$url_car = 'https://media.wired.com/photos/5d09594a62bcb0c9752779d9/master/pass/Transpo_G70_TA-518126.jpg';
-$vh = $_POST['size'] ?? 30;
+$r = $_POST['red'] ?? 255;
+$g = $_POST['green'] ?? 255;
+$b = $_POST['blue'] ?? 255;
+$a = $_POST['transparacy'] ?? 0;
 ?>
 <html>
 <head>
     <title>Class_work</title>
     <style>
-        .car {
-            height: <?php print $vh; ?>vh;
-            object-fit: contain;
+        body {
+            background-color: rgba(<?php print $r; ?>, <?php print $g; ?>, <?php print $b; ?>,<?php print $a; ?>);
         }
     </style>
 </head>
 <body>
 <form method="post">
-    <input name="size" type="range" min="1" max="90" value="<?php print $vh; ?>">
+    <label>
+        <span>red</span>
+        <input name="red" type="range" step="1" min="0" max="255" value="<?php print $r; ?>">
+    </label>
+    <label>
+        <span>green</span>
+        <input name="green" type="range" step="1" min="0" max="255" value="<?php print $g; ?>">
+    </label>
+    <label>
+        <span>blue</span>
+        <input name="blue" type="range" step="1" min="0" max="255" value="<?php print $b; ?>">
+    </label>
+    <label>
+        <span>transparacy</span>
+        <input name="transparacy" type="range" step="0.01" min="0" max="1" value="<?php print $a; ?>">
+    </label>
     <button>Submit</button>
 </form>
-<img class="car" src="<?php print $url_car; ?>">
 </body>
 </html>
