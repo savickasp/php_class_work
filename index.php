@@ -1,7 +1,11 @@
 <?php
 
+$h2 = 'Ducho sertifikatas';
+
 if (isset($_POST['form'])) {
     $inputArr = $_POST['form'];
+} else {
+    $inputArr = [];
 }
 
 ?>
@@ -22,6 +26,7 @@ if (isset($_POST['form'])) {
     <button>Submit</button>
 </form>
 <section>
+    <h2><?php print $h2;?></h2>
     <?php foreach ($inputArr as $key => $input): ?>
     <div><?php printf('%s: %s', $key, $input );?></div>
     <?php endforeach;?>
