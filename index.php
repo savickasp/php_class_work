@@ -9,7 +9,12 @@ $form = [
     'fields' => [
         'name1' => [
             'label' => 'name1',
-            'type' => 'text',
+            'type' => 'select',
+            'option' => [
+                '0' => 'vienas',
+                '1' => 'trys',
+                '2' => 'du',
+            ],
             'value' => 'PpPpP',
             'error' => 'Klaida',
             'extra' => [
@@ -31,6 +36,7 @@ $form = [
             ],
         ],
     ],
+    'message' => 'Zinute nuo formos',
 ];
 
 function html_attr($array)
