@@ -10,7 +10,6 @@
 
             <label>
                 <span class="label"><?php print $field['label'] ?></span>
-
                 <?php endif; ?>
 
                 <!-- if create select -->
@@ -43,11 +42,9 @@
                 <!-- field message -->
                 <div class="error-style"><?php print ($field['error'] ?? ''); ?></div>
                 <!-- end of field message -->
-
                 <?php if (isset($field['label'])): ?>
             </label>
             <!-- end of label -->
-
         <?php endif; ?>
 
         </div>
