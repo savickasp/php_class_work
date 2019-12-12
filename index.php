@@ -8,14 +8,25 @@ $form = [
     ],
     'fields' => [
         'name1' => [
-            'label' => 'name1',
+            'label' => 'Vardas Pirmas',
+            'type' => 'text',
+            'value' => 'PpPpP',
+            'error' => 'Klaida',
+            'extra' => [
+                'attr' => [
+                    'class' => 'name1',
+                    'id' => 'name1',
+                ],
+            ],
+        ],
+        'option1' => [
+            'label' => 'Option first',
             'type' => 'select',
             'option' => [
                 '0' => 'vienas',
                 '1' => 'trys',
                 '2' => 'du',
             ],
-            'value' => 'PpPpP',
             'error' => 'Klaida',
             'extra' => [
                 'attr' => [
