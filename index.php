@@ -1,4 +1,8 @@
 <?php
+var_dump($_POST);
+define('ROOT', __DIR__);
+define('ROOT_URL', 'http://phplocal.lt/php_class_work');
+
 $form = [
     'attr' => [
         'action' => 'index.php',
@@ -30,8 +34,56 @@ $form = [
             'error' => 'Klaida',
             'extra' => [
                 'attr' => [
-                    'class' => 'name1',
-                    'id' => 'name1',
+                    'class' => 'option1_class',
+                    'id' => 'option1_id',
+                ],
+            ],
+        ],
+        'radio1' => [
+            'label' => 'Radio first',
+            'type' => 'radio',
+            'option' => [
+                '0' => 'vienas',
+                '1' => 'trys',
+                '2' => 'du',
+            ],
+            'error' => 'Klaida',
+            'extra' => [
+                'attr' => [
+                    'class' => 'radio1_id',
+                    'id' => 'radio1_id',
+                ],
+            ],
+        ],
+        'gerimai' => [
+            'label' => 'Radio second',
+            'type' => 'radio',
+            'option' => [
+                '0' => 'vynas',
+                '1' => 'alus',
+                '2' => 'sidras',
+            ],
+            'error' => 'Klaida',
+            'extra' => [
+                'attr' => [
+                    'class' => 'gerimai_id',
+                    'id' => 'gerimai_id',
+                ],
+            ],
+        ],
+        'checkbox1' => [
+            'label' => 'Checkbox first',
+            'type' => 'checkbox',
+            'option' => [
+                '0' => 'vienas',
+                '1' => 'trys',
+                '2' => 'du',
+            ],
+            'error' => 'Klaida',
+            'extra' => [
+                'attr' => [
+                    'class' => 'check1_class',
+                    'id' => 'chech1_id',
                 ],
             ],
         ],
@@ -65,6 +117,6 @@ function html_attr($array)
     <title>Class_work</title>
 </head>
 <body>
-<?php include 'templates/form.tpl.php' ?>
+<?php include ROOT . '/templates/form.tpl.php' ?>
 </body>
 </html>
