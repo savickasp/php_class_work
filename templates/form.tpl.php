@@ -12,26 +12,7 @@
                 <?php endif; ?>
 
                 <!-- include input element -->
-                <?php if (in_array($field['type'], [
-                    'color',
-                    'date',
-                    'datetime-local',
-                    'email',
-                    'file', // set extra => ['attr' =>['multiple']]
-                    'hidden',
-                    'image', // set extra => ['attr' =>['src' => '', 'alt' => '']]
-                    'month',
-                    'number', // set extra => ['attr' =>['min' => '', 'max' => '']]
-                    'password',
-                    'range', // set extra => ['attr' =>['min' => '', 'max' => '', 'step' => '']]
-                    'reset',
-                    'search',
-                    'tel',
-                    'text',
-                    'time',
-                    'url',
-                    'week',
-                ])): ?>
+                <?php if (in_array($field['type'], INPUT_TYPES)): ?>
                     <?php require ROOT . '/templates/elements/' . 'input.tpl.php'; ?>
                 <?php else: ?>
                     <?php require ROOT . '/templates/elements/' . $field['type'] . '.tpl.php'; ?>
