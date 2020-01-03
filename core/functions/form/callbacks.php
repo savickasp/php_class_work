@@ -12,8 +12,9 @@ function form_success($form, $inputs)
     unset($inputs['password_repeat']);
     $array[] = $inputs;
     array_to_file($array, DB_FILE);
+
     setcookie('submit', 1, time() + 3600);
-    header('location:http://phplocal.lt/php_class_work/index.php');
+    $template = 'table';
 }
 
 /*
