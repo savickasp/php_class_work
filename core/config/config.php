@@ -20,3 +20,5 @@ define('INPUT_TYPES', [
     'url',
     'week',
 ]);
+
+define('DB_FILE', ROOT . '/data/db.txt');
