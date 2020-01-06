@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @param $array
+ * @param array $columns
+ * @return array|bool
+ */
 function renderTable($array, $columns = [])
 {
     $ret = [];

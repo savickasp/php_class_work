@@ -1,8 +1,8 @@
 <?php
 
-/*
- * function takes array of html attributes and
- * returns string of html attributes
+/**
+ * @param $array
+ * @return string
  */
 function html_attr($array)
 {

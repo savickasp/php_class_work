@@ -1,15 +1,14 @@
 <?php
 
 $incudeArr = [
-    '/core/classes/View.php',
-    '/core/config/config.php',
-    '/core/functions/functions.php',
-    '/core/functions/form/core.php',
-    '/core/functions/form/validators.php',
-    '/core/functions/form/callbacks.php',
-    '/core/functions/html.php',
+    '/core/config/config',
+    '/app/functions/form/callbacks',
+    '/app/functions/form/validators',
+    '/core/functions/functions',
+    '/core/functions/html',
+    '/core/functions/core',
 ];
 
 foreach ($incudeArr as $filePath) {
-    include ROOT . $filePath;
+    include ROOT . $filePath . '.php';
 }

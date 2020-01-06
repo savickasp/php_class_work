@@ -30,6 +30,7 @@ $form = [
             ],
             'validators' => [
                 'validate_not_empty',
+                'validate_username',
             ],
         ],
         'password' => [
@@ -70,16 +71,6 @@ $form = [
             ],
             'validators' => [
                 'validate_not_empty',
-                'validate_string_lenght' => [
-                    'from' => [
-                        'value' => 10,
-                        'message' => 'per mazai',
-                    ],
-                    'to' => [
-                        'value' => 15,
-                        'message' => 'per daug',
-                    ],
-                ],
             ],
         ],
     ],
@@ -94,5 +85,5 @@ $form = [
             ],
         ],
     ],
-    'message' => 'Zinute nuo formos',
+    'show_form' => true,
 ];

@@ -1,14 +1,16 @@
 <?php
 define('ROOT', __DIR__);
 include_once ROOT . '/core/bootloader.php';
+include_once ROOT . '/app/views/pages/register.page.php';
 
 if (!isset($_COOKIE['submit'])) {
-    include_once ROOT . '/app/views/pages/form.page.php';
-
     if (!empty($_POST)) {
         $inputs = get_filtered_input($form);
         fill_form($form, $inputs);
         validate_form($form, $inputs);
+    } elseif (isset($_COOKIE['formData'])) {
+        $array = json_decode($_COOKIE['formData']);
+        fill_form($form, $array);
     }
 
     $template = 'form';

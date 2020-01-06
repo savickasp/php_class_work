@@ -103,3 +103,18 @@ function validate_capthca($inputs, &$fields, $params)
         $fields[$params[1]]['error'] = 'nesutampa';
     }
 }
+
+/**
+ * @param $field_input
+ * @param $field
+ * @return bool
+ */
+function validate_username($field_input, &$field) {
+    foreach(file_to_array(DB_FILE) as $arr) {
+        if ($arr['username'] === $field_input) {
+            $field['error'] = 'username already exist';
+            return false;
+        }
+    }
+    return true;
+}

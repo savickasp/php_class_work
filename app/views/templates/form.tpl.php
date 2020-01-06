@@ -1,5 +1,5 @@
 <form <?php print html_attr(($form['attr'] ?? []) + (['method' => 'post'])); ?>>
-
+    <?php if ($form['show_form']): ?>
     <!-- start inputs -->
     <?php foreach ($form['fields'] ?? [] as $field_id => $field): ?>
 
@@ -39,7 +39,7 @@
         <button name="action" <?php print html_attr(($button['extra']['attr'] ?? []) + ['value' => $button_id]); ?>><?php print ($button['tile'] ?? 'submit'); ?></button>
     <?php endforeach; ?>
     <!-- end of buttons -->
-
+    <?php endif; ?>
     <!-- messsage -->
     <?php if (isset($form['message'])): ?>
         <div class="form-message"><?php print $form['message']; ?></div>
