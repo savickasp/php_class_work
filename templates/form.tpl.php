@@ -2,7 +2,6 @@
     <?php if ($form['show_form']): ?>
     <!-- start inputs -->
     <?php foreach ($form['fields'] ?? [] as $field_id => $field): ?>
-
         <div class="input-container">
 
             <!-- start label -->
@@ -13,9 +12,9 @@
 
                 <!-- include input element -->
                 <?php if (in_array($field['type'], INPUT_TYPES)): ?>
-                    <?php require ROOT . '/app/views/templates/form_elements/' . 'input.form.tpl.php'; ?>
+                    <?php require ROOT . '/templates/form_elements/' . 'input.form.tpl.php'; ?>
                 <?php else: ?>
-                    <?php require ROOT . '/app/views/templates/form_elements/' . $field['type'] . '.form.tpl.php'; ?>
+                    <?php require ROOT . '/templates/form_elements/' . $field['type'] . '.form.tpl.php'; ?>
                 <?php endif; ?>
 
                 <?php if (isset($field['label'])): ?>

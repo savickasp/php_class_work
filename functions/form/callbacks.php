@@ -14,16 +14,30 @@ function form_success(&$form, $inputs)
     $form['message'] = 'registration was succesfull!';
     $form['show_form'] = false;
 
-//    setcookie('submit', 1, time() + 3600);
-//    $template = 'table';
 }
 
 /**
  * @param $form
  * @param $inputs
  */
-function form_fail($form, $inputs)
+function form_fail(&$form, $inputs)
 {
+    fill_form($form, $inputs);
     $encode = json_encode($inputs);
     setcookie('formData', $encode, time() +3600);
+}
+
+function login_success($form, $inputs) {
+    $_SESSION = [
+        'loggedin' => true,
+        'username' => $inputs['username'],
+        'password' => $inputs['password'],
+    ];
+
+    set_user_page_visits($inputs['username']);
+    header('location:' . ROOT_URL);
+}
+
+function login_fail(&$form, $inputs) {
+    $form['message'] = 'login failed';
 }

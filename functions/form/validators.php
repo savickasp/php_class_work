@@ -110,11 +110,18 @@ function validate_capthca($inputs, &$fields, $params)
  * @return bool
  */
 function validate_username($field_input, &$field) {
-    foreach(file_to_array(DB_FILE) as $arr) {
+    foreach(file_to_array(DB_FILE) ?? [] as $arr) {
         if ($arr['username'] === $field_input) {
             $field['error'] = 'username already exist';
             return false;
         }
     }
     return true;
+}
+
+function validate_login($inputs, $fields) {
+    foreach (file_to_array(DB_FILE) ?? [] as $user) {
+        if ($user['username'] === $inputs['username'] && $user['password'] === $inputs['password']) return true;
+    }
+    return false;
 }
